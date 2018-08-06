@@ -1,0 +1,11 @@
+.red { color: red; }
+
+.tooltip { color: grey; font-size: 12px; }
+
+.call-to-action { font-size: 13px; font-style: italic; }
+
+.granted { border: 2px solid green; }
+
+.denied { border: 2px solid red; }
+
+.error { background-color: red; color: white; font-size: 12px; font-weight: bold; padding: 2px; }
