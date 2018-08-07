@@ -113,7 +113,8 @@ window.onload = () => {
 				value: value
 			})
 		})
-		.then(res => res.json())
+		.then(res => res.text())
 		.then(res => console.log("RES",res))
+		.catch(e => console.log(e))
 	}
 };
