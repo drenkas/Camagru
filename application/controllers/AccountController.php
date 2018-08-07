@@ -16,7 +16,6 @@ class AccountController extends Controller {
 
 	public function registerAction() {
 		$post = json_decode(file_get_contents('php://input'), true);
-		var_dump($post);
 		if (!empty($post['type']) && $post['type'] == 'email') {
 			if ($this->model->checkEmailExists($post['value'])) {
 				header("Content-Type: application/json");
@@ -26,7 +25,7 @@ class AccountController extends Controller {
 				echo json_encode(['status' => 'success', 'message' => $post['value']]);
 			}
 		}
-		if ($post['submit']) {
+		else if ($post['submit']) {
 			if ($this->model->checkEmailExists($_POST['email'])) {
 				header("Content-Type: application/json");
 				echo json_encode(['status' => 'error', 'message' => 'Такой E-mail уже используется'], JSON_UNESCAPED_UNICODE);
@@ -40,8 +39,10 @@ class AccountController extends Controller {
 				echo json_encode(['status' => 'success', 'message' => 'Регистрация завершена, подтвердите свой E-mail'], JSON_UNESCAPED_UNICODE);
 				//$this->view->message('success', 'Регистрация завершена, подтвердите свой E-mail');
 			}
-		};
-		$this->view->render('Регистрация');
+		} else {
+			
+			$this->view->render('Регистрация');
+		}
 	}
 
 }
