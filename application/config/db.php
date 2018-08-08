@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'host' => '127.0.0.1',
+	'host' => 'localhost',
 	'name' => 'camagru',
 	'user' => 'root',
-	'password' => '123qwe',
+	'password' => 'renkas',
 ];

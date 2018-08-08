@@ -9,3 +9,15 @@
 .denied { border: 2px solid red; }
 
 .error { background-color: red; color: white; font-size: 12px; font-weight: bold; padding: 2px; }
+
+.display-show {
+	display: block !important;
+}
+
+.display-hide {
+	display: none !important;
+}
+
+#exampleModalLabel {
+	padding-right: 17px;
+}

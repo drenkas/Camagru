@@ -9,5 +9,23 @@
 	<p><input type="password" name="password"  id="passwd-register" placeholder="Password"></p>
 	<input id="submit-register" class="register" type="submit" value="Register">
 </form>
+
+<div class="modal fade show display-hide" id="registerSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Успешная регистрация</h5>
+				
+			</div>
+			<div class="modal-body" id="registerSuccessModal__body">
+				<br>
+				Через 5 секунд вы будете перенаправлены на главную страницу.
+			</div>
+			<div class="modal-footer">
+				<button id="registerSuccessModal__button" type="button" class="btn btn-primary">Перейти на главную</button>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="modal-backdrop fade show display-hide" id="backdrop" ></div>
 <script src="<?php echo ROOT_URL; ?>public/js/registerForm.js"></script>
