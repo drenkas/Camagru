@@ -24,9 +24,7 @@ window.onload = () => {
 
 
 	register_btn.addEventListener('click', submition);
-	document.getElementById('registerSuccessModal__button').addEventListener('click', function () {
-		document.location.href = homeUrl;
-	});
+	
 
 
 	function grantDeny(element, regexp, errorMessage) {
@@ -61,7 +59,7 @@ window.onload = () => {
 
 	function onLoginChange() {
 		var element = this,
-			errorMessage = " Имя задано неправильно ";
+			errorMessage = " Ім'я задано неправильно ";
 			regexp = regLogin; 
 		grantDeny(element, regexp, errorMessage);
 		checkExists('login', element.value, element);
@@ -70,14 +68,14 @@ window.onload = () => {
 	function onPassChange() {
 		var element = this,
 			regexp = regPass; 
-		errorMessage = " Пароль задан неправильно ";
+		errorMessage = " Пароль задано неправильно ";
 		grantDeny(element, regexp, errorMessage);
 	}
 
 	function onEmailChange() {
 		var element = this,
 			regexp = regEmail; 
-		errorMessage = " Email задан неправильно ";
+		errorMessage = " Email задано неправильно ";
 		grantDeny(element, regexp, errorMessage);
 		checkExists('email', element.value, element);
 	}
@@ -94,10 +92,8 @@ window.onload = () => {
 		if(finalCheck(login, regLogin) && finalCheck(email, regEmail) && finalCheck(password, regPass)) {
 			e.preventDefault();
 			checkExists('login', login.value, login).then(res =>{
-				console.log("Check1 ", res);
 				if (res) {
 					checkExists('email', email.value, email).then(res =>{
-						console.log("Check2 ", res);
 						if (res) {
 							fetch('', {
 								method: 'POST',
@@ -116,14 +112,29 @@ window.onload = () => {
 							})
 							.then(res => res.json())
 							.then(res => {
+								reg_success.classList.remove("display-hide");
+								reg_success.classList.add("display-show");
+								backdrop.classList.remove("display-hide");
+								backdrop.classList.add("display-show");
+								reg_success__body.innerHTML = res.message;
 								if (res.status === "success")
 								{
-									reg_success.classList.remove("display-hide");
-									reg_success.classList.add("display-show");
-									backdrop.classList.remove("display-hide");
-									backdrop.classList.add("display-show");
-									reg_success__body.innerHTML = res.message;
+									document.getElementById('registerSuccessModal__button').addEventListener('click', function () {
+										document.location.href = homeUrl;
+									});
+									document.getElementById('registerSuccessModal__button').classList.remove("btn-danger");
+									document.getElementById('registerSuccessModal__button').classList.add("btn-primary");
+									document.getElementById('registerSuccessModal__button').innerHTML = 'Перейти на головна';
+									document.getElementById('registerModalLabel').innerHTML = "Успішна Реєстрація";
 									setTimeout(hrefUrl, 5000);
+								} else if (res.status === "error") {
+									document.getElementById('registerSuccessModal__button').addEventListener('click', function () {
+										document.location.href = document.URL;
+									});
+									document.getElementById('registerSuccessModal__button').classList.remove("btn-primary");
+									document.getElementById('registerSuccessModal__button').classList.add("btn-danger");
+									document.getElementById('registerSuccessModal__button').innerHTML = 'Перезавантажити сторінку';
+									document.getElementById('registerModalLabel').innerHTML = "Провальная *як твоє життя* Реєстрація";
 								}
 							})
 							.catch(e => console.log("E", e));

@@ -11,29 +11,32 @@ class AccountController extends Controller {
 		if (!empty($_POST)) {
 			$this->view->location('account/register');
 		}
-		$this->view->render('Вход');
+		$this->view->render('Вхід');
 	}
 
 	public function registerAction() {
 		$post = json_decode(file_get_contents('php://input'), true);
 		if (!empty($post['type'])) {
 			if ($this->model->checkEmailExists($post['value'])) {
-				$this->view->message('error', 'Такой E-mail уже используется');
+				$this->view->message('error', 'Такий E-mail вже використовується');
 			}
 			else if (!$this->model->checkLoginExists($post['value'])) {
-				$this->view->message('error', 'Такой login уже используется');
+				$this->view->message('error', 'Такий login вже використовується');
 			}
 			else $this->view->message('success', ' ');
 		}
 		else if ($post['submit']) {
-			
-				$this->model->register($post);
-				header("Content-Type: application/json");
-				$this->view->message('success', 'Регистрация завершена, подтвердите свой E-mail. <br>
-				Через 5 секунд вы будете перенаправлены на главную страницу.');
+			header("Content-Type: application/json");
+			if ($this->model->register($post)){
+				$this->view->message('success', 'Реєстрацію закінчено, підтвердіть свій E-mail. <br>
+				Через 5 секунд ви будете перенаправлені на головну сторінку.');
+			} else {
+				$this->view->message('error', $this->model->error);
+			};
+
 		} else {
 			
-			$this->view->render('Регистрация');
+			$this->view->render('Реєстрація');
 		}
 	}
 

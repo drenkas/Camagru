@@ -10,6 +10,7 @@ return [
 	'guest' => [
 		'register',
 		'login',
+		'confirm'
 	],
 	'admin' => [
 		//

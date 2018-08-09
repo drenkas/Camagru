@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/register.css">
-<h3>Регистрация</h3>
+<h3>Реєстрація</h3>
 <form id="form-register" name="form-register" action="<?php //echo $_SERVER['PHP_SELF']; ?>" method="post">
-	<p>Логин</p>
+	<p>Логін</p>
 	<p><input type="text" name="login" id="login-register" placeholder="UberHeliSexual" ></p>
 	<p>E-mail</p>
 	<p><input type="email" name="email"  id="email-register" placeholder="UberHeliSexual@example.com"></p>
@@ -14,15 +14,13 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Успешная регистрация</h5>
+				<h5 class="modal-title" id="registerModalLabel"></h5>
 				
 			</div>
 			<div class="modal-body" id="registerSuccessModal__body">
-				<br>
-				Через 5 секунд вы будете перенаправлены на главную страницу.
 			</div>
 			<div class="modal-footer">
-				<button id="registerSuccessModal__button" type="button" class="btn btn-primary">Перейти на главную</button>
+				<button id="registerSuccessModal__button" type="button" class="btn btn-primary"></button>
 			</div>
 		</div>
 	</div>
