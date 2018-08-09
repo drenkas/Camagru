@@ -40,4 +40,12 @@ class AccountController extends Controller {
 		}
 	}
 
+	public function confirmAction () {
+		
+		if (!$this->model->checkVerifExists($this->route['verification'])) {
+			$this->view->errorCode(403);
+		}
+		$this->view->render('Реєстрацію завершено');
+	}
+
 }

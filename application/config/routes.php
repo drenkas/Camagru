@@ -16,5 +16,10 @@ return [
 		'controller' => 'account',
 		'action' => 'register',
 	],
+
+	'account/confirm/{verification:\w+}' => [
+		'controller' => 'account',
+		'action' => 'confirm',
+	],
 	
 ];

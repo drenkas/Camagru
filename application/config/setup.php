@@ -11,7 +11,7 @@
 			email VARCHAR(255),
 			password VARCHAR(128),
 			verificationCode VARCHAR(255) NOT NULL,
-			`status` enum('0','1') NOT NULL DEFAULT '0',
+			`status` INT(6) NOT NULL DEFAULT 0,
 			reg_date TIMESTAMP
 		);");
 		$db->exec($sql);

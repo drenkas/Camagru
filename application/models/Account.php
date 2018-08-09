@@ -67,6 +67,16 @@ class Account extends Model {
 		}
 		return true;
 	}
+	public function checkVerifExists($verif) {
+		$params = [
+			'verificationCode' => $verif,
+		];
+		if ($this->db->column('SELECT id FROM users WHERE verificationCode = :verificationCode', $params)) {
+			$this->db->query('UPDATE users SET status = 1, verificationCode = "" WHERE verificationCode = :verificationCode', $params);
+			return true;
+		}
+		return false;
+	}
 
 	public function register($post) {
 		/* $token = $this->createToken(); */
