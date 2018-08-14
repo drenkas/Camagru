@@ -5,7 +5,8 @@ return [
 		//
 	],
 	'authorize' => [
-		//
+		'profile',
+		'logout',
 	],
 	'guest' => [
 		'register',

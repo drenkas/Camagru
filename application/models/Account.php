@@ -63,11 +63,12 @@ class Account extends Model {
 			'login' => $login,
 		];
 		if ($this->db->column('SELECT id FROM users WHERE login = :login', $params)) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
-	public function checkVerifExists($verif) {
+
+	public function changeVerif($verif) {
 		$params = [
 			'verificationCode' => $verif,
 		];
@@ -76,6 +77,27 @@ class Account extends Model {
 			return true;
 		}
 		return false;
+	}
+
+	public function checkPassword($login, $password) {
+		$params = [
+			'login' => $login,
+		];
+		$hash = $this->db->column('SELECT password FROM users WHERE login = :login', $params);
+		if (!$hash or !password_verify($password, $hash)) {
+			return false;
+		}
+		return true;
+	}
+
+	public function checkVerifExists($login) {
+		$params = [
+			'login' => $login,
+		];
+		if (!$this->db->column('SELECT status FROM users WHERE login = :login', $params)) {
+			return false;
+		}
+		return true;
 	}
 
 	public function register($post) {
@@ -90,6 +112,16 @@ class Account extends Model {
 		
 		$this->db->query('INSERT INTO users (email, login, password, verificationCode) VALUES (:email, :login, :password, :verificationCode)', $params);
 		return $this->sendVerifMail($params);
+	}
+
+	public function login($login) {
+		$params = [
+			'login' => $login,
+		];
+		$data = $this->db->row('SELECT * FROM users WHERE login = :login', $params);
+		if (!$data) return false;
+		$_SESSION['authorize'] = $data[0];
+		return true;
 	}
 
 }

@@ -1,14 +1,34 @@
 <link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/register.css">
-<h3>Реєстрація</h3>
-<form id="form-register" name="form-register" action="<?php //echo $_SERVER['PHP_SELF']; ?>" method="post">
-	<p>Логін</p>
-	<p><input type="text" name="login" id="login-register" placeholder="UberHeliSexual" ></p>
-	<p>E-mail</p>
-	<p><input type="email" name="email"  id="email-register" placeholder="UberHeliSexual@example.com"></p>
-	<p>Пароль</p>
-	<p><input type="password" name="password"  id="passwd-register" placeholder="Password"></p>
-	<input id="submit-register" class="register" type="submit" value="Register">
-</form>
+
+<div class="container">
+	<div class="card"></div>
+	<div class="card">
+		<h1 class="title">Реєстрація</h1>
+		<form id="form-register" name="form-register" method="post" autocomplete="off">
+			<div class="input-container">
+				<input type="text" id="login-register" name="login" required="required"/>
+				<label for="login-register">Ім'я користувача</label>
+				<div class="bar"></div>
+				<div class="error" id="error-login"></div>
+			</div>
+			<div class="input-container">
+				<input type="text" id="email-register" name="email" autocomplete="off" required="required"/>
+				<label for="email-register">E-mail</label>
+				<div class="bar"></div>
+				<div class="error" id="error-email"></div>
+			</div>
+			<div class="input-container">
+				<input type="password" id="passwd-register" name="password" required="required"/>
+				<label for="passwd-register">Пароль</label>
+				<div class="bar"></div>
+				<div class="error" id="error-pass"></div>
+			</div>
+			<div class="button-container">
+				<button type="submit" id="submit-register" name="enter"><span>Ну спробуй!</span></button>
+			</div>
+		</form>
+	</div>
+</div>
 
 <div class="modal fade show display-hide" id="registerSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -24,6 +44,17 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div id="registerLoading" class="banter-loader display-hide">
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
+  <div class="banter-loader__box"></div>
 </div>
 <div class="modal-backdrop fade show display-hide" id="backdrop" ></div>
 <script src="<?php echo ROOT_URL; ?>public/js/registerForm.js"></script>
