@@ -11,6 +11,7 @@
 			email VARCHAR(255),
 			password VARCHAR(128),
 			verificationCode VARCHAR(255) NOT NULL,
+			isNotif BOOLEAN DEFAULT true,
 			`status` INT(6) NOT NULL DEFAULT 0,
 			reg_date TIMESTAMP
 		);");

@@ -16,6 +16,7 @@ return [
 		'controller' => 'account',
 		'action' => 'register',
 	],
+	
 	'account/profile' => [
 		'controller' => 'account',
 		'action' => 'profile',
@@ -28,6 +29,16 @@ return [
 	'account/confirm/{verification:\w+}' => [
 		'controller' => 'account',
 		'action' => 'confirm',
+	],
+
+	'account/recovery' => [
+		'controller' => 'account',
+		'action' => 'recovery',
+	],
+
+	'account/reset/{verification:\w+}' => [
+		'controller' => 'account',
+		'action' => 'reset',
 	],
 	
 ];

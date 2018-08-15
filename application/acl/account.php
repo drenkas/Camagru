@@ -11,7 +11,9 @@ return [
 	'guest' => [
 		'register',
 		'login',
-		'confirm'
+		'reset',
+		'confirm',
+		'recovery'
 	],
 	'admin' => [
 		//

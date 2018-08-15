@@ -7,6 +7,9 @@ window.onload = () => {
 
 	login_btn.addEventListener('click', submition);
 
+	var homeUrl = document.URL.slice(0, -13);
+
+
 	function submition(e) {
 		e.preventDefault();
 		error_login.classList.remove("error-show");
@@ -27,12 +30,18 @@ window.onload = () => {
 						password: password.value
 					})
 				})
-				.then(res => res.text())
+				.then(res => res.json())
 				.then(res => {
-					console.log("RES", res);
+					if( res.status === "success" ){
+						document.location.href=homeUrl;
+					} else {
+						error_login.innerHTML = res.message;
+						error_login.classList.add("error-show");
+					}
 				})
 				.catch(e => {
-					console.log("E", e);
+					error_login.innerHTML = e;
+					error_login.classList.add("error-show");
 				});
 			}
 		})
@@ -53,16 +62,22 @@ window.onload = () => {
 		})
 		.then(res => res.json())
 		.then(res => {
-			console.log("res111 ", res);
 			if (res.status === "error") {
-				if (res.message === "Такого логіна не існує")
+				if (res.message === "Невірно вказано пароль")
+					error_pass.classList.add("error-show");
+				else {
+					error_login.innerHTML = res.message;
 					error_login.classList.add("error-show");
-				else error_pass.classList.add("error-show");
+				}
 				return false;
 			} else if( res.status === "success" ){
+				document.location.href=homeUrl;
 				return true;
 			}
 		})
-		.catch(e => console.log(e))
+		.catch(e => {
+			error_login.innerHTML = e;
+			error_login.classList.add("error-show");
+		})
 	}
 }

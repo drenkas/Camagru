@@ -40,7 +40,7 @@ window.onload = () => {
 				element.parentNode.childNodes[7].classList.add("error-show");
 				switch (element.name) {
 					case "login":
-						element.parentNode.childNodes[7].innerHTML = "Ім'я користувача повинно містити 1-20 символів a-z A-Z 0-9";
+						element.parentNode.childNodes[7].innerHTML = "Ім'я повинно містити 1-20 символів a-z A-Z 0-9";
 						break;
 					case "email":
 						element.parentNode.childNodes[7].innerHTML = "Невірний формат email. example@gmail.com";

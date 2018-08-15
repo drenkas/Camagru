@@ -208,6 +208,16 @@ figure {
 			outline: none;
 			color: #FFC300; }
 
+#default-authorize-name {
+	color: white;
+	text-align: center;
+	font-weight: 500;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-bottom: 3em;
+	display: block;
+	width: 100%;
+}
 #default-main {
   width: 80%;
   height: 100%;

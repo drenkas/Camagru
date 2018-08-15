@@ -1,19 +1,10 @@
 .parent {
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
 	overflow: auto;
 }
 .parent div {
-	width: 810px;
-	height: 300px;
-	position: absolute;
 	color: rgb(24, 24, 24);
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -405px;
 	text-align: center;
 }
 .parent div h1 {
@@ -27,10 +18,10 @@
 	border: none;
 	color: rgb(255, 255, 255);
 	text-decoration: none;
-	background: #007bff;
+	background: rgb(255, 174, 0);
 	padding: 21px 57px;
 	font-size: 18px;
-	border: 1px solid #0071e9;
+	border: 1px solid rgb(221, 151, 0);
 	box-sizing: border-box;
 	box-shadow: 0px 0px 0px 0px;
 	border-radius: 5px;
@@ -43,5 +34,5 @@
 }
 .parent div .button:focus, .parent div .button:hover {
 	text-decoration: none;
-	box-shadow: 0px 0px 73px -10px #007bff;
+	box-shadow: 0px 0px 73px -10px rgb(255, 174, 0);
 }

@@ -8,9 +8,9 @@
 
 
 		
-		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap.css">
-		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap-grid.css">
-		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap-reboot.css">
+		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/bootstrap-reboot.min.css">
 		<link rel="stylesheet" href="<?php echo ROOT_URL; ?>public/css/style.css">
 	</head>
 	<body>
@@ -18,6 +18,9 @@
 		<a href="#" class="js-default-nav-toggle default-nav-toggle"><i></i></a>
 		<aside id="default-aside" role="complementary" class="border js-fullheight">
 			<h1 id="default-logo"><a href="index.html">Camagru</a></h1>
+			<?php if (isset($_SESSION['authorize']['id'])) : ?>
+				<h3 id="default-authorize-name">Привіт, <a href="<?php echo ROOT_URL; ?>account/profile"><?php echo $_SESSION['authorize']['login'];?></a></h3>
+			<?php endif	?>
 			<nav id="default-main-menu" role="navigation">
 				<ul id="default-main-list">
 					<li name="Головна"><a href="<?php echo ROOT_URL; ?>">Головна</a></li>

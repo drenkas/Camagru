@@ -9,7 +9,7 @@
 				<input type="text" id="login-login" name="login" required="required"/>
 				<label for="login-login">Ім'я користувача</label>
 				<div class="bar"></div>
-				<div class="error" id="error-login">Невірно вказане ім'я користувача</div>
+				<div class="error" id="error-login"></div>
 			</div>
 			<div class="input-container">
 				<input type="password" id="password-login" name="password" required="required"/>
@@ -20,7 +20,7 @@
 			<div class="button-container">
 				<button type="submit" id="submit-login" name="enter"><span>Гайда!</span></button>
 			</div>
-			<div class="footer"><a href="#">Забув пароль? Їбать ти лох.</a></div>
+			<div class="footer"><a href="<?php echo ROOT_URL; ?>account/recovery">Забув пароль? Їбать ти лох.</a></div>
 		</form>
 	</div>
 </div>
