@@ -12,7 +12,6 @@ class MainController extends Controller {
 			'news' => $result,
 		];
 		$this->view->render('Головна', $vars);
-		echo("Darova");
 	}
 
 }

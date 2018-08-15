@@ -12,6 +12,11 @@ return [
 		'action' => 'login',
 	],
 
+	'post/snap' => [
+		'controller' => 'post',
+		'action' => 'snap',
+	],
+
 	'account/register' => [
 		'controller' => 'account',
 		'action' => 'register',

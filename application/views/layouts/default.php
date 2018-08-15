@@ -27,7 +27,7 @@
 					<li name="Галерея"><a href="work.html">Галерея</a></li>
 					<?php if (isset($_SESSION['authorize']['id'])) : ?>
 					<li name="Профіль"><a href="<?php echo ROOT_URL; ?>account/profile">Профіль</a></li>
-					<li name="Зробити пікчу"><a href="about.html">Зробити пікчу</a></li>
+					<li name="Зробити пікчу"><a href="<?php echo ROOT_URL; ?>post/snap">Зробити пікчу</a></li>
 					<li name="Вийти"><a href="<?php echo ROOT_URL; ?>account/logout">Вийти</a></li>
 					<?php else: ?>
 					<li name="Реєстрація"><a href="<?php echo ROOT_URL; ?>account/register">Реєстрація</a></li>
