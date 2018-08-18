@@ -1,0 +1,185 @@
+/*==========  Mobile First Method  ==========*/
+
+	.container {
+		margin-top: 20px;
+	}
+
+	.container .row div h4 {
+		margin: 0;
+	}
+
+	#video {
+		display: none;
+	}
+
+	#canvas {
+		width: 100%;
+	}
+
+	.sticker {
+		width: 100%;
+		border: 1px solid #7e7e7e;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+
+	.button-container {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	.button-container button {
+		outline: 0;
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		background: 0;
+		width: 180px;
+		border: 2px solid #e3e3e3;
+		padding: 20px 0;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1;
+		text-transform: uppercase;
+		overflow: hidden;
+		transition: .3s ease;
+	}
+	.button-container button span {
+		position: relative;
+		z-index: 1;
+		color: #ddd;
+		transition: .3s ease;
+	}
+	.button-container button:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		background: rgb(255, 174, 0);
+		width: 30px;
+		height: 30px;
+		border-radius: 100%;
+		margin: -15px 0 0 -15px;
+		opacity: 0;
+		transition: .3s ease;
+	}
+	.button-container button:hover, .button-container button:active, .button-container button:focus {
+		border-color: rgb(255, 174, 0);
+	}
+	.button-container button:hover span, .button-container button:active span, .button-container button:focus span {
+		color: rgb(255, 174, 0);
+	}
+	.button-container button:active span, .button-container button:focus span {
+		color: #ffffff;
+	}
+	.button-container button:active:before, .button-container button:focus:before {
+		opacity: 1;
+		-webkit-transform: scale(10);
+		transform: scale(10);
+	}
+	
+	.input-file-container {
+		position: relative;
+	} 
+	.input-file-trigger {
+		display: inline-block;
+		padding: 5px 13px;
+		background: #ffffff;
+		border: 2px solid #e3e3e3;
+		color: #868686;
+		font-size: 20px;
+		transition: all .4s;
+		cursor: pointer;
+	}
+	.input-file {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 180px;
+		margin-left: -90px;
+		opacity: 0;
+		padding: 7px 0;
+		cursor: pointer;
+	}
+	.input-file:hover + .input-file-trigger,
+	.input-file:focus + .input-file-trigger,
+	.input-file-trigger:hover,
+	.input-file-trigger:focus {
+		background: #ffae00;
+		color: #464646;
+		border: 2px solid #808080;
+	}
+
+	.remove-container {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+		position: relative;
+	}
+	.remove-container button {
+		outline: 0;
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		width: 180px;
+
+		background: #ffffff;
+		border: 2px solid #e3e3e3;
+		color: #868686;
+		padding: 5px 0;
+		font-size: 18px;
+		line-height: 1;
+		text-transform: uppercase;
+		overflow: hidden;
+		transition: .3s ease;
+	}
+	.remove-container button span {
+		position: relative;
+		z-index: 1;
+		transition: .3s ease;
+	}
+	.remove-container button:hover, .remove-container button:focus {
+		background: #ffae00;
+		color: #464646;
+		border: 2px solid #808080;
+	}
+	
+	.postBtn {
+		border: rgb(221, 151, 0);
+		background: rgb(255, 174, 0);
+		color: #ffffff
+	}
+
+	.postBtn:hover , .postBtn:focus {
+		background: rgb(255, 166, 0);
+	}
+
+	.recent-photos {
+		margin-top: 15px;
+	}
+
+	.recent-photos__container img{
+		width: 100%;
+		border: 1px solid #7e7e7e;
+		margin-bottom: 10px;
+	}
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (min-width : 576px) {
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px) {
+		
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {
+
+	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px) {
+
+	}

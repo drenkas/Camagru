@@ -12,6 +12,11 @@ return [
 		'action' => 'login',
 	],
 
+	'post/gallery' => [
+		'controller' => 'post',
+		'action' => 'gallery',
+	],
+
 	'post/snap' => [
 		'controller' => 'post',
 		'action' => 'snap',

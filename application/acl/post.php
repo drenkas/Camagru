@@ -2,7 +2,7 @@
 
 return [
 	'all' => [
-		//
+		'gallery'
 	],
 	'authorize' => [
 		'snap',
