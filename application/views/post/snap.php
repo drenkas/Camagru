@@ -4,8 +4,10 @@
 	<div class="row">
 		<div class="col-lg-8 col-sm-12">
 			<div class="row justify-content-center">
-				<video id="video" width="480px" height="480px" autoplay></video>
-				<canvas class="col-12" id="canvas" width="480px" height="480px"></canvas>
+				<div class="col-12">
+					<video id="video" width="480px" height="480px" autoplay></video>
+					<canvas id="canvas" width="480px" height="480px"></canvas>
+				</div>
 			</div>
 			<div class="row justify-content-between">
 				<div class="col-4 col-md-2 col-sm-4">

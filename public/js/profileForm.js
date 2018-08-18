@@ -44,6 +44,7 @@ window.onload = () => {
 				'Content-Type': 'application/json'
 			},
 			mode: 'cors',
+			credentials: 'same-origin',
 			body: JSON.stringify({
 				check: true,
 				value: element.checked
@@ -154,6 +155,7 @@ window.onload = () => {
 							'Content-Type': 'application/json'
 						},
 						mode: 'cors',
+						credentials: 'same-origin',
 						body: JSON.stringify({
 							submit: true,
 							submit_type: element.name,
@@ -209,6 +211,7 @@ window.onload = () => {
 				'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
 				'Content-Type': 'application/json'
 			},
+			credentials: 'same-origin',
 			body: JSON.stringify({
 				type: type,
 				value: element.value

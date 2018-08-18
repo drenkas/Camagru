@@ -17,14 +17,14 @@
 	<div id="default-page">
 		<a href="#" class="js-default-nav-toggle default-nav-toggle"><i></i></a>
 		<aside id="default-aside" role="complementary" class="border js-fullheight">
-			<h1 id="default-logo"><a href="index.html">Camagru</a></h1>
+			<h1 id="default-logo"><a href="<?php echo ROOT_URL; ?>">Camagru</a></h1>
 			<?php if (isset($_SESSION['authorize']['id'])) : ?>
 				<h3 id="default-authorize-name">Привіт, <a href="<?php echo ROOT_URL; ?>account/profile"><?php echo $_SESSION['authorize']['login'];?></a></h3>
 			<?php endif	?>
 			<nav id="default-main-menu" role="navigation">
 				<ul id="default-main-list">
 					<li name="Головна"><a href="<?php echo ROOT_URL; ?>">Головна</a></li>
-					<li name="Галерея"><a href="work.html">Галерея</a></li>
+					<li name="Галерея"><a href="<?php echo ROOT_URL; ?>post/gallery">Галерея</a></li>
 					<?php if (isset($_SESSION['authorize']['id'])) : ?>
 					<li name="Профіль"><a href="<?php echo ROOT_URL; ?>account/profile">Профіль</a></li>
 					<li name="Зробити пікчу"><a href="<?php echo ROOT_URL; ?>post/snap">Зробити пікчу</a></li>

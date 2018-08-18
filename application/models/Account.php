@@ -39,7 +39,7 @@ class Account extends Model {
 		------------------------
 		</pre>
 		Ну і якщо на те пішло, то тисни на посилання, щоб ми точно знали що це твоя скринька: ';
-		$mail_message .= 'http://localhost' . ROOT_URL . 'account/confirm/'.$params['verificationCode'];
+		$mail_message .= 'http://localhost:8080' . ROOT_URL . 'account/confirm/'.$params['verificationCode'];
 		$mail_message .= '</body></html>';
 		// Send mail	
 		$mailSent = mail($params['email'], $mail_subject, $mail_message, $header);

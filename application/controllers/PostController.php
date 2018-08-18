@@ -23,7 +23,7 @@ class PostController extends Controller {
 			imagesavealpha($stickerResized,true);
 			imagecolortransparent($stickerResized, imagecolorallocate($stickerResized,0,0,0));
 			imagecopyresampled($stickerResized, $image2, 0, 0, 0, 0, $w_dest, $h_dest, $w_src, $h_src);
-			imagecopymerge($image1, $stickerResized, (int)$post['posX'], (int)$post['posY'], 0, 0, 150, 250, 100);
+			imagecopymerge($image1, $stickerResized, (int)$post['posX'], (int)$post['posY'], 0, 0, 150, 150, 100);
 			ob_start();
 			imagepng($image1);
 			$contents = ob_get_contents();
@@ -42,5 +42,23 @@ class PostController extends Controller {
 			];
 			$this->view->render('Зробити пікчу', $vars);
 		}
+	}
+
+	public function galleryAction() {
+		/* $result = $this->model->getNews();
+		$vars = [
+			'news' => $result,
+		]; */
+		$post = json_decode(file_get_contents('php://input'), true);
+		if ($post['submit']) {
+			if (($result = $this->model->gallery()))
+			{
+				$this->view->message('success', json_encode($result));
+			} else {
+				$this->view->message('error', 'Щось пішло не так');
+			}
+		} else {
+			$this->view->render('Галерея');
+		};
 	}
 }

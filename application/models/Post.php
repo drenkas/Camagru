@@ -24,4 +24,18 @@ class Post extends Model {
 		$result = $this->db->row('SELECT * FROM posts WHERE post_user = :post_user order by id desc limit 3', $params);
 		return $result;
 	}
+
+	public function gallery() {
+		$params = [];
+		$posts = $this->db->row('SELECT * FROM posts', $params);
+		$likes = $this->db->row('SELECT * FROM likes', $params);
+		$comments = $this->db->row('SELECT * FROM comments', $params);
+		$result = [
+			'comments' => $comments,
+			'posts' => $posts,
+			'likes' => $likes
+		];
+		return $result;
+
+	}
 }

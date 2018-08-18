@@ -22,6 +22,7 @@ window.onload = () => {
 						'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
 						'Content-Type': 'application/json'
 					},
+					credentials: 'same-origin',
 					mode: 'cors',
 					body: JSON.stringify({
 						
@@ -54,6 +55,7 @@ window.onload = () => {
 				'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
 				'Content-Type': 'application/json'
 			},
+			credentials: 'same-origin',
 			body: JSON.stringify({
 				type: type,
 				pass: pass.value,
