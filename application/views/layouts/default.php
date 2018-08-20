@@ -19,7 +19,7 @@
 		<aside id="default-aside" role="complementary" class="border js-fullheight">
 			<h1 id="default-logo"><a href="<?php echo ROOT_URL; ?>">Camagru</a></h1>
 			<?php if (isset($_SESSION['authorize']['id'])) : ?>
-				<h3 id="default-authorize-name">Привіт, <a href="<?php echo ROOT_URL; ?>account/profile"><?php echo $_SESSION['authorize']['login'];?></a></h3>
+				<h3 id="default-authorize-name">Привіт, <a id="username" href="<?php echo ROOT_URL; ?>account/profile"><?php echo $_SESSION['authorize']['login'];?></a></h3>
 			<?php endif	?>
 			<nav id="default-main-menu" role="navigation">
 				<ul id="default-main-list">

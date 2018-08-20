@@ -57,6 +57,8 @@ class PostController extends Controller {
 			} else {
 				$this->view->message('error', 'Щось пішло не так');
 			}
+		} if ($post['action'] == "delete_like") {
+
 		} else {
 			$this->view->render('Галерея');
 		};
