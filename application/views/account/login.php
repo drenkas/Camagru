@@ -6,7 +6,7 @@
 		<h1 class="title">Вхід</h1>
 		<form action="<?php echo ROOT_URL; ?>account/login" method="post" autocomplete="off">
 			<div class="input-container">
-				<input type="text" id="login-login" name="login" required="required"/>
+				<input type="text" id="login-login" name="login" required="required" autocomplete="off"/>
 				<label for="login-login">Ім'я користувача</label>
 				<div class="bar"></div>
 				<div class="error" id="error-login"></div>

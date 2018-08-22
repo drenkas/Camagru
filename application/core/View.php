@@ -44,7 +44,6 @@ class View {
 
 	public function location($url) {
 		$url = ROOT_URL. $url;
-		/* debug($url); */
 		exit(json_encode(['url' => ($url)]));
 	}
 

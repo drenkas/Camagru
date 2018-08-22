@@ -2,6 +2,13 @@
 .display-show {
 	display: block !important;
 }
+.bar-error {
+	background: rgb(248, 30, 30) !important;
+}
+
+.bar-confirm {
+	background: rgb(66, 248, 30) !important;
+}
 
 .display-hide {
 	display: none !important;

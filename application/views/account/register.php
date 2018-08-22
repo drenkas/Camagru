@@ -6,7 +6,7 @@
 		<h1 class="title">Реєстрація</h1>
 		<form id="form-register" name="form-register" method="post" autocomplete="off">
 			<div class="input-container">
-				<input type="text" id="login-register" name="login" required="required"/>
+				<input type="text" id="login-register" name="login" required="required" autocomplete="off"/>
 				<label for="login-register">Ім'я користувача</label>
 				<div class="bar"></div>
 				<div class="error" id="error-login"></div>

@@ -1,12 +1,6 @@
 
-/* =======================================================
-*
-* 	Template Style 
-*	Edit this section
-*
-* ======================================================= */
 body {
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
@@ -30,7 +24,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Roboto";
   font-weight: 400;
   margin: 0 0 30px 0; }
 
@@ -44,7 +38,7 @@ figure {
 	margin: 20px auto 0px auto;
 	color: #b3b3b3;
 	font-style: italic;
-	font-family: "Quicksand", Arial, sans-serif; }
+	font-family: "Roboto"; }
 	@media screen and (max-width: 480px) {
 	  figure figcaption {
 		width: 100%; } }
@@ -85,14 +79,15 @@ figure {
 	transition: 0.5s;
 }
   @media screen and (max-width: 992px) {
-	#default-aside {
-	  width: 270px;
-	  -moz-transform: translateX(-270px);
-	  -webkit-transform: translateX(-270px);
-	  -ms-transform: translateX(-270px);
-	  -o-transform: translateX(-270px);
-	  transform: translateX(-270px);
-	  padding-top: 4em; } }
+		#default-aside {
+			width: 270px;
+			-moz-transform: translateX(-270px);
+			-webkit-transform: translateX(-270px);
+			-ms-transform: translateX(-270px);
+			-o-transform: translateX(-270px);
+			transform: translateX(-270px);
+			padding-top: 4em; } 
+	}
   #default-aside #default-logo {
 	text-align: right;
 	font-weight: 700;
@@ -109,7 +104,7 @@ figure {
 	  text-align: center;
 	  color: #fff;
 	  letter-spacing: 2px;
-	  padding-right: .3em; }
+  }
   #default-aside #default-main-menu ul {
 	text-align: center;
 	margin: 0;
@@ -130,7 +125,7 @@ figure {
 		text-decoration: none;
 		position: relative;
 		padding: 10px 0;
-		font-family: "Quicksand", Arial, sans-serif;
+		font-family: "Roboto";
 		-webkit-transition: 0.3s;
 		-o-transition: 0.3s;
 		transition: 0.3s; }
@@ -184,9 +179,7 @@ figure {
 	padding: 0 20px;
 	width: 100%; }
 	@media screen and (max-width: 992px) {
-	  #default-aside .default-footer {
-		position: relative;
-		bottom: 0; } }
+ }
 	#default-aside .default-footer span {
 	  display: block; }
 	#default-aside .default-footer ul {
@@ -216,6 +209,7 @@ figure {
 	width: 100%;
 }
 #default-main {
+	position: relative;
   width: 80%;
   height: 100%;
   float: right;
@@ -225,3 +219,87 @@ figure {
   @media screen and (max-width: 992px) {
 	#default-main {
 	  width: 100%; } }
+
+.menu {
+	z-index: 9998;
+	position: absolute;
+	top: 20px;
+	left: 10px;
+	width: 35px;
+	height: 4px;
+	background: #272727;
+	cursor: pointer;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+.menu:before, .menu:after {
+	display: block;
+	position: absolute;
+	content: '';
+	left: 0;
+	height: 4px;
+	width: 35px;
+	background: #272727;
+}
+.menu:before {
+	top: -8px;
+}
+.menu:after {
+	bottom: -8px;
+}
+.menu-active {
+	background: #ffffff;
+}
+.menu-active:before, .menu-active:after {
+
+	background: #fff;
+}
+.menu-box {
+	z-index: 9999;
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	width: 35px;
+	height: 20px;
+	cursor: pointer;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.default-aside-active {
+	width: 270px;
+	-moz-transform: translateX(0px) !important;
+	-webkit-transform: translateX(0px) !important;
+	-ms-transform: translateX(0px) !important;
+	-o-transform: translateX(0px) !important;
+	transform: translateX(0px) !important;
+	padding-top: 4em;
+}
+@media only screen and (min-width : 576px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.menu , .menu-box{
+		
+		-moz-transform: translateX(-50px);
+		-webkit-transform: translateX(-50px);
+		-ms-transform: translateX(-50px);
+		-o-transform: translateX(-50px);
+		transform: translateX(-50px);
+	}
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

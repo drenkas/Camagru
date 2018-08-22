@@ -150,6 +150,15 @@ class Account extends Model {
 			];
 		};
 		if ($this->db->query('UPDATE users SET '.$post['submit_type'].' = :'.$post['submit_type'].' WHERE id = :id', $params)) {
+			if ($post['submit_type'] == 'login') {
+				$params = [
+					'user' => $_SESSION['authorize']['login'],
+					'post_user' => $post['value'],
+				];
+				$this->db->query('UPDATE posts SET post_user = :post_user WHERE post_user = :user', $params);
+				$this->db->query('UPDATE likes SET like_user = :post_user WHERE like_user = :user', $params);
+				$this->db->query('UPDATE comments SET comment_user = :post_user WHERE comment_user = :user', $params);
+			}
 			$params = [
 				'id' => $_SESSION['authorize']['id'],
 			];
@@ -189,7 +198,7 @@ class Account extends Model {
 		<h2>Тобі, '.$params['login'].', пощастило, що я добрий і дозволяю встановити новий.</h2>
 
 		Ех... Щоб ти робив без мене! Давай тисни швидше на посилання: ';
-		$mail_message .= 'http://localhost' . ROOT_URL . 'account/reset/'.$params['verificationCode'];
+		$mail_message .= 'http://localhost:8080' . ROOT_URL . 'account/reset/'.$params['verificationCode'];
 		$mail_message .= '</body></html>';
 		// Send mail	
 		$mailSent = mail($params['email'], $mail_subject, $mail_message, $header);

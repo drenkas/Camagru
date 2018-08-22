@@ -44,6 +44,7 @@
 			</div>
 			<h3 style="margin: 0;">Додати коментар:</h3>
 			<div class="input-group">
+				<div class="error" id="error-pass"></div>
 				<textarea class="form-control snap__comment" aria-label="With textarea" maxlength="50"></textarea>
 			</div>
 			

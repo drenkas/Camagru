@@ -24,14 +24,6 @@
 			post_date TIMESTAMP
 		);");
 		$db->exec($sql);
-		$sql = (
-			"INSERT INTO posts (post_user, post_desc, img)
-			SELECT * FROM (SELECT 'testUser', 'testPost', 'http://via.placeholder.com/500X500') AS tmp
-			WHERE NOT EXISTS (
-				SELECT post_user FROM posts WHERE post_user = 'testUser'
-			) LIMIT 1;"
-		);
-		$db->exec($sql);
 		$sql = ("CREATE TABLE IF NOT EXISTS COMMENTS (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			comment_user VARCHAR(255) NOT NULL,

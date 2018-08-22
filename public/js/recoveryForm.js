@@ -52,6 +52,7 @@ window.onload = () => {
 
 	function finalCheck(element, regexp) {
 		var value = element.value;
+		grantDeny(element, regexp);
 		if (regexp.test(value)) {
 			return true;
 		}
@@ -83,7 +84,6 @@ window.onload = () => {
 					})
 					.then(res => res.json())
 					.then(res => {
-						console.log("submit", res);
 						loading.classList.remove("display-show");
 						loading.classList.add("display-hide");
 						reg_success.classList.remove("display-hide");
@@ -141,7 +141,6 @@ window.onload = () => {
 		})
 		.then(res => res.json())
 		.then(res => {
-			console.log("Check", res);
 			if (res.status === "error") {
 					element.parentNode.childNodes[5].classList.remove("bar-confirm");
 					element.parentNode.childNodes[5].classList.add("bar-error");

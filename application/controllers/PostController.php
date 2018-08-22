@@ -51,15 +51,22 @@ class PostController extends Controller {
 		]; */
 		$post = json_decode(file_get_contents('php://input'), true);
 		if ($post['submit']) {
-			if (($result = $this->model->gallery()))
-			{
-				$this->view->message('success', json_encode($result));
-			} else {
-				$this->view->message('error', 'Щось пішло не так');
-			}
-		} if ($post['action'] == "delete_like") {
-
-		} else {
+			if (($result = $this->model->gallery()))$this->view->message('success', json_encode($result));
+			else $this->view->message('error', 'Щось пішло не так');
+			
+		} else if ($post['action'] == "delete_like") {
+			if ($this->model->deleteLike($post['id']))$this->view->message('success', "Норм удаляєш, братан");
+			else $this->view->message('error', 'Щось пішло не так');
+		} else if ($post['action'] == "add_like") {
+			if (($newLike = $this->model->addLike($post['post_id'], $post['user'])))$this->view->message('success', json_encode($newLike));
+			else $this->view->message('error', 'Щось пішло не так');
+		} else if ($post['action'] == "add_comment") {
+			if (($newCom = $this->model->addComment($post)))$this->view->message('success', json_encode($newCom));
+			else $this->view->message('error', 'Щось пішло не так');
+		}else if ($post['action'] == "delete_post") {
+			if ($this->model->deletePost($post['id']))$this->view->message('success', "Збс, удаляєш братан");
+			else $this->view->message('error', 'Щось пішло не так');
+		}else{
 			$this->view->render('Галерея');
 		};
 	}

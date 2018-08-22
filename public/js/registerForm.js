@@ -77,6 +77,7 @@ window.onload = () => {
 
 	function finalCheck(element, regexp) {
 		var value = element.value;
+		grantDeny(element, regexp);
 		if (regexp.test(value)) {
 			return true;
 		}

@@ -19,6 +19,7 @@
 	let defaultPosY = 0;
 	let startX;
 	let startY;
+	const error = document.getElementById('error-pass');
 	const snapBtn = document.getElementById('snap');
 	const modal = document.getElementById('exampleModal')
 	const closeBtnX = document.querySelector('.close');
@@ -57,13 +58,22 @@
 
 
 	function snapshot() {
+		const comment = document.querySelector('.snap__comment');
+		error.classList.remove("error-show");
+		var reg = /^[а-яА-ЯёЁіІїЇa-zA-Z0-9]+$/;
+		let value = comment.value.trim();
 		if (!currentPic) return
-		if (localMediaStream || uploadedImg.src) {
-			modal.style.display = 'block';
-			modal.classList.add('show');
-			modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-			create_preview();
-		} else return;
+		if (reg.test(value) || comment.value === ''){
+			if (localMediaStream || uploadedImg.src) {
+				modal.style.display = 'block';
+				modal.classList.add('show');
+				modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+				create_preview();
+			} else return;
+		} else {
+			error.classList.add("error-show");
+			error.innerHTML = "Комент повинен містити 1-50 символів a-z A-Z а-я А-Я ёЁ 0-9";
+		}
 	}
 
 	function create_preview() {

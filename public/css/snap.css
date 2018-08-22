@@ -8,6 +8,26 @@
 		margin: 0;
 	}
 
+	.error{
+		font-size: 12px;
+		opacity: 0;
+		position: absolute;
+		left:0;
+		top: 58px;
+		transition: .2s ease;
+	}
+	
+	.input-group {
+		position: relative;
+		margin-bottom: 40px;
+	}
+	
+	.error-show{
+		transition: .2s ease;
+		color: rgb(255, 71, 71);
+		opacity: 1;
+	}
+
 	#video {
 		display: none;
 	}
@@ -163,23 +183,4 @@
 		width: 100%;
 		border: 1px solid #7e7e7e;
 		margin-bottom: 10px;
-	}
-	/* Extra Small Devices, Phones */ 
-	@media only screen and (min-width : 576px) {
-
-	}
-
-	/* Small Devices, Tablets */
-	@media only screen and (min-width : 768px) {
-		
-	}
-
-	/* Medium Devices, Desktops */
-	@media only screen and (min-width : 992px) {
-
-	}
-
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px) {
-
 	}
