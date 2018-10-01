@@ -7,7 +7,7 @@ body {
 	color: rgb(32, 32, 32);
 	font-size: 63px;
 	position: relative;
-	width: 440px;
+	width: 468px;
 	margin: 0 auto;
 	text-align: center;
 	-webkit-transition: 0.5s;
@@ -171,7 +171,21 @@ body {
 	animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
 
+@media only screen and (max-width : 326px) {
+	.glitch {
+		width: 100%;
+	}
 
+	.glitch:after {
+		content: attr(data-text);
+		left: 2px;
+	}
+	
+	.glitch:before {
+		content: attr(data-text);
+		left: -2px;
+	}
+}
 
 @media only screen and (min-width : 576px) {
 
@@ -181,7 +195,7 @@ body {
 @media only screen and (min-width : 768px) {
 	.glitch {
 		font-size: 100px;
-		width: 400px;
+		width: 500px;
 	}
 
 	.glitch:after {

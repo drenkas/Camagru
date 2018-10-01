@@ -9,7 +9,7 @@
 		<form name="form-profile" method="post" autocomplete="off">
 			<div class="input-container">
 				<input type="text" id="login-profile" name="login" required="required"/>
-				<label for="login-profile">Змінити ім'я користувача</label>
+				<label for="login-profile">Змінити ім'я</label>
 				<div class="bar"></div>
 				<div class="error" id="error-login"></div>
 				<div class="button-container">

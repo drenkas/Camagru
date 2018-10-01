@@ -60,7 +60,7 @@
 	function snapshot() {
 		const comment = document.querySelector('.snap__comment');
 		error.classList.remove("error-show");
-		var reg = /^[а-яА-ЯёЁіІїЇa-zA-Z0-9]+$/;
+		var reg = /^[а-яА-ЯёЁіІїЇa-zA-Z0-9\s\W]+$/;
 		let value = comment.value.trim();
 		if (!currentPic) return
 		if (reg.test(value) || comment.value === ''){

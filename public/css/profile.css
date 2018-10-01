@@ -720,4 +720,14 @@ h6 {
   .banter-loader__box:nth-child(9) {
 	animation: moveBox-9 4s infinite;
   }
-  
+	
+	@media only screen and (max-width : 576px) {
+		.card .input-container label {
+			font-size: 20px;
+		}
+	
+		.card .button-container button {
+			width: 52px;
+		}
+	}
+	

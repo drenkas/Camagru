@@ -6,7 +6,7 @@
 	var loading = document.getElementById('registerLoading');
 
 	function onSubmitComment(post, comments, newSnap) {
-		var reg = /^[а-яА-ЯёЁіІїЇa-zA-Z0-9]+$/;
+		var reg = /^[а-яА-ЯёЁіІїЇa-zA-Z0-9\s\W]+$/;
 		const textarea = newSnap.querySelector('textarea');
 		const actionL = "add_comment"; 
 		const commentsCont = newSnap.querySelector('.comments');
@@ -75,7 +75,9 @@
 				}
 			});
 		}
-		submitbtn.addEventListener('click', function(){onSubmitComment(post, comments, newSnap)}, false);
+		if (document.getElementById('username')){
+			submitbtn.addEventListener('click', function(){onSubmitComment(post, comments, newSnap)}, false);
+		}
 	}
 
 	function onClickLike(post, likes, like, newSnap) {
@@ -186,15 +188,17 @@
 			newSnap.querySelector('.card-img-top').src = post.img;
 			newSnap.querySelector('.card-text').innerHTML = post.post_desc;
 			newSnap.querySelector('.text-muted').innerHTML = post.post_user+": "+ post.post_date;
-			if (user.innerText === post.post_user.toUpperCase()){
-				let deleteBtn = newSnap.querySelector('.delete');
-				deleteBtn.classList.remove("display-hide");
-				deleteBtn.addEventListener('click', function(){onClickDelete(post,  newSnap)}, false);
-			}
+			
 			if (document.getElementById('username')){
+				if (user.innerText === post.post_user.toUpperCase()){
+					let deleteBtn = newSnap.querySelector('.delete');
+					deleteBtn.classList.remove("display-hide");
+					deleteBtn.addEventListener('click', function(){onClickDelete(post,  newSnap)}, false);
+				}
 				getLikes(newSnap, post, likes);
-				getComments(newSnap, post, comments);
+				
 			}
+			getComments(newSnap, post, comments);
 			parentPag.appendChild(newSnap);
 		}
 	}

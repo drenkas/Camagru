@@ -22,4 +22,5 @@ function onClickMenu(e) {
 	}
 }
 
+
 menu_box.addEventListener('click', onClickMenu);

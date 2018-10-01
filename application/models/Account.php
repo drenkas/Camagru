@@ -122,9 +122,10 @@ class Account extends Model {
 			'password' => password_hash($post['password'], PASSWORD_BCRYPT),
 			'verificationCode' => $activation
 		];
-		
+		if (!$this->sendVerifMail($params))
+			return false;
 		$this->db->query('INSERT INTO users (email, login, password, verificationCode) VALUES (:email, :login, :password, :verificationCode)', $params);
-		return $this->sendVerifMail($params);
+		return true;
 	}
 
 	public function login($login) {
