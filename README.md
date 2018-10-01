@@ -19,6 +19,7 @@ Desktop version:
 ![alt text](./screenshots/1.png "Home page desktop")
 
 Mobile version:
+
 ![alt text](./screenshots/2.png "Home page mobile")
 
 You can create an account and log in. To do this, you need to fill out forms and go to validate your email. All fields are validated and notified of errors.
@@ -40,10 +41,14 @@ At any time you can change the profile data.
 #### Snapshot
 
 The main functionality is to create a photo with a sticker. You can move the sticker around the preview area and change them. Also, if you do not have a webcam, you can upload photos from a PC. You can add a comment to the photo and see up to 3 of your latest shots. 
+
 ![Snapshot webcam](./screenshots/8.png "Snapshot webcam")
+
 ![Snapshot pic](./screenshots/7.png "Snapshot pic")
 Before you post your picture, look how it looks with the commentary.
+
 ![alt text](./screenshots/9.png "Preview")
+
 `A picture without a sticker is IMPOSSIBLE`.
 
 #### Gallery
@@ -53,9 +58,11 @@ The gallery shows up to 6 pictures on one page.
 
 ![alt text](./screenshots/10.png "Gallery auth")
 After logout:
+
 ![alt text](./screenshots/11.png "Gallery guest")
 
 All data is stored in a MySQL database
+
 ![alt text](./screenshots/12.png "DB")
 
 **Thank you for watching! Hell Yeah!**
